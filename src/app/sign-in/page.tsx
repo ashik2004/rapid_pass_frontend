@@ -44,7 +44,7 @@ const SignInPage = () => {
     async function onSubmit(values: z.infer<typeof formSchema>) {
         try {
             // Send a POST request to the FastAPI backend
-            const response = await axios.post('http://localhost:8000/user/login', {
+            const response = await axios.post(`${process.env.backend_url}/user/login`, {
                 email: values.email,
                 password: values.password,
             });
